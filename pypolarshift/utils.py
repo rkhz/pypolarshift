@@ -1,29 +1,7 @@
 import matplotlib.pyplot as plt
-from matplotlib.gridspec import GridSpec
-
-def plot_rot_transform(polar_map, polar_map_shifted, image, title=''):
-    fig = plt.figure()
-    plt.subplot(311)
-    plt.imshow(polar_map.T)
-    plt.title('{}Polar Map'.format(title))
-    plt.axis('off')
-
-    plt.subplot(312)
-    plt.imshow(polar_map_shifted.T)
-    plt.title('{}Polar Map (shifted)'.format(title))
-    plt.axis('off')
-
-    plt.subplot(313)
-    plt.imshow(image)
-    plt.title('{}Rotated Image'.format(title))
-    plt.axis('off')
-
-    plt.tight_layout(h_pad=0.5,w_pad=0.0)
-    plt.show()
+from matplotlib.gridspec import GridSpec    
     
-    
-    
-def plot_polar_cart(polar_map, image, polar_map_shifted, image_rot):
+def plot_rot_transform(polar_map, image, polar_map_shifted, image_rot):
     col, row  = polar_map.shape
     if col > row:
         polar = polar_map.T
